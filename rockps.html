@@ -53,11 +53,11 @@
 
         function PCSelection(){
             let randomInt = Math.floor(Math.random()*100)
-            if (randomInt <= 33.333){
+            if (randomInt <= 33){
                 return Rock;
                 
             }
-            else if (randomInt <= 66.667 && randomInt > 33.333){
+            else if (randomInt <= 66 && randomInt > 33){
                 return Scissors;
                 
             }
@@ -70,18 +70,22 @@
             let playerSelectionQueue = prompt('Please enter rock, scissors or paper').toLowerCase();
             if (playerSelectionQueue == 'rock' || playerSelectionQueue == 'scissors' || playerSelectionQueue == 'paper') {
                 if (playRound(playerSelectionQueue, PCSelection()) == 'won'){
+
                 score++;
+                alert('You won this match, your score is ' + score);
             }else if (playRound(playerSelectionQueue, PCSelection()) == 'lost' ){
                 loss++;
+                alert('You lost this match, your loss is ' + loss);
             }else{
+                alert('Tied')
                 console.log('tie');
             }
 
             } else{
              continue;
         }
-            console.log("score is " + score);
-            console.log("loss is " + loss);    
+            // console.log("score is " + score);
+            // console.log("loss is " + loss);    
         }
         
         if (score == 5){
